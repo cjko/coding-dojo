@@ -1,0 +1,10 @@
+cd DojoAssignments/
+git init
+git add .
+git commit -m "Initial commit"
+touch readme.md
+git status
+git add .
+git commit -m "Added readme.md"
+git remote add origin git@github.com:cjko2/DojoAssignments.git
+git push -u origin master

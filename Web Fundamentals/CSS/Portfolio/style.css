@@ -1,0 +1,142 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+
+#photo_of_me {
+	height: 250px;
+	margin: 20px 20px 0 20px;
+	border: 5px solid rgb(192,192,192);
+}
+
+#photo_of_you {
+	width: 100%;
+	/*margin: 20px;*/
+
+}
+
+.wrapper {
+	background: radial-gradient(#755764, #200B10);
+	width: 950px;
+}
+
+.header {
+	background-color: rgb(247, 247, 247);
+}
+
+.me_container {
+	display:inline-block;
+	vertical-align: top;
+	height: 550px;
+	background-color: white;
+	margin: 20px 20px;
+	font-family: Arial;
+	width: 270px;
+	background: linear-gradient(90deg, #FEFEFE, #DECBD9);
+}
+
+.bottomcontent {
+	background: rgb (117, 87, 100);
+}
+.about_container {
+	display: inline-block;
+	vertical-align: top;
+	background-color: #FFFDFE;
+	margin: 20px 0px 0 0px;
+	width: 485px;
+	height: 260px;
+	background: linear-gradient(90deg, #FEFEFE, #DECBD9);
+}
+
+.technology_header {
+	background-color: #91909C;
+	padding: 10px;
+	/*border-radius: 5px;*/
+	color: white;
+	font-size: 1em;
+	background: linear-gradient(#B2B1B5, #8D8B97, #B7B7B9);
+}
+
+
+p {
+	padding: 10px;
+	font-size: 10pt;
+}
+
+a {
+	color: black;
+}
+
+.box2 {
+	padding: 4px;
+	text-align: justify;
+	margin: 10px;
+	font-size: 9pt;
+	height: 150px;
+
+}
+
+button {
+	display: block;
+	/*width: auto;*/
+	padding: 5px 5px;
+	background-color: #068061;
+	color: white;
+	border-radius: 7px;
+	border: 1px solid #024A38;
+	margin: 0 auto;
+	box-shadow: 4px 4px 4px #868988;
+}
+
+.thumbnail {
+	width: 35px;
+	height: 35px;
+	margin: 6px;
+}
+
+.footer {
+	width: 100%;
+	text-align: center;
+	background-color: #F8F8F8;
+	padding: 5px;
+}
+
+.social {
+	height: 18px;
+	font-style: italic;
+	font-size: 10pt;
+}
+
+.footer_contact {
+	font-size: 10pt;
+	padding: 0px 0 10px 0;
+	background-color: white;
+}
+
+h1 {
+	display: inline-block;
+	margin: 0 170px 0 0;
+	font-family: "Comic Sans MS";
+	padding: 10px 0 10px 20px;
+	vertical-align: center;
+	font-size: 1.75em;
+}
+
+h3 {
+	margin-left: 200px;
+	display: inline-block;
+	vertical-align: center;
+	font-size: 13pt;
+}
+
+.section_header {
+	background: linear-gradient(#B2B1B5, #8D8B97, #B7B7B9);
+	padding: 10px;
+	/*border-radius: 5px;*/
+	color: white;
+	font-size: 13pt;
+
+}
+
