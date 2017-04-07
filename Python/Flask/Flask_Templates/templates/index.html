@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{message}}</title>
+</head>
+<body>
+<h1>{{message}},{{loops}}</h1>
+<ul>
+	{% for i in range (0,loops) %}
+		{% if i % 2 == 0 %}
+		<li>{{message}}</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+</body>
+</html>

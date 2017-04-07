@@ -1,0 +1,33 @@
+* {
+	font-family: Arial, sans-serif;
+}
+
+.row {
+	display: block;
+	margin: 10px 0;
+}
+
+form {
+	text-align: right;
+	width: 300px;
+}
+
+h1 {
+	border-bottom: 1px solid black;
+	width: 300px;
+}
+
+input {
+}
+
+table th {
+	width: 300px;
+	padding:0 5px;
+}
+
+table {
+	margin-bottom: 200px;
+	border: 1px solid black;
+}
+
+

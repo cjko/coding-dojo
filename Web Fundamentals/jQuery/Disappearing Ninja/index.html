@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Disappearing Images</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('document').ready(function(){
+			$('img').click(function(){
+				$(this).fadeTo(300,0)
+			})
+
+			$('button').click(function() {
+				$('img').fadeTo(300,1)
+			})
+		})
+	</script>
+
+</head>
+<body>
+<div class="row">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+</div>
+<div class="row">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background">
+</div>
+<div class="row">
+	<button>Restore</button>
+</div>
+</body>
+</html>

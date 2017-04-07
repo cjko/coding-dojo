@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hover In/Out</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$('document').ready(function(){
+			$('h1').hide();
+			$('img').hover(
+				//Hover In
+				function(){
+					var altsrc = $(this).attr('altsrc');
+					var src = $(this).attr('src');
+					$(this).attr('src', altsrc);
+					$(this).attr('altsrc', src);
+					$('h1').show();
+				},
+				//Hover Out
+				function(){
+					var altsrc = $(this).attr('altsrc');
+					var src = $(this).attr('src');
+					$(this).attr('src', altsrc);
+					$(this).attr('altsrc', src);
+					$('h1').hide();
+				}
+			)
+		});
+
+			// function(){
+			// 	var altsrc = $(this).attr('altsrc')
+			// 	temp = $(this).attri('src')
+			// 	$(this).attr('src',altsrc)
+			// }, function() {
+			// 	alert('hi')
+			// });
+	</script>
+</head>
+<body>
+<div class="row">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+</div>
+<div class="row">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+	<img src="http://img1.wikia.nocookie.net/__cb6/nyancat/images/5/50/Wiki-background" altsrc="http://vignette1.wikia.nocookie.net/steven-universe/images/9/9a/Dat_boi.gif/revision/latest?cb=20160716123916">
+</div>
+<div class="row">
+	<h1>here come dat boi!!!!!</h1>
+</div>
+</body>
+</html>

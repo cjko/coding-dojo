@@ -1,0 +1,46 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: Arial, sans-serif;
+}
+
+.pictures {
+	display: inline-block;
+	vertical-align: top;
+	width: 60%;
+}
+
+.info {
+	display: inline-block;
+	vertical-align: top;
+	width: 30%;
+}
+
+.pokedex {
+	width: 30%;
+	height: 800px;
+	background-color: red;
+	margin: 50px 0;
+	padding: 40px;
+	position: fixed;
+	border: 10px solid darkred;
+}
+
+.display {
+	margin: 0 auto;
+	background-color: lightgreen;
+	height: 350px;
+	width: 80%;
+	padding: 20px;
+	overflow: scroll;
+	text-align: center;
+}
+
+.display li {
+	list-style-type: none;
+}
+
+.display h5 {
+	margin: 10px 0 5px 0;
+	text-decoration: underline;
+}

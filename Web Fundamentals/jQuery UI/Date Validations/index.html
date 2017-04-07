@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Validations</title>
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.datepicker').datepicker()
+			$('form').submit(function(){
+				var tripFrom = $("input[name='trip-from']").val()
+				var tripTo = $("input[name='trip-to']").val()
+				var name = $("input[name='name']").val()
+				var errorMessage = ''
+
+				$('.error').html(errorMessage)
+
+				console.log(tripFrom, tripTo, name)
+
+				console.log(Date())
+
+				
+				if (tripFrom == '') {
+					errorMessage += '<p style="color:red">Missing leave date!</p>'
+				}
+				if (tripTo == '') {
+					errorMessage += '<p style="color:red">Missing return date!</p>'
+				}
+				if (name == '') {
+					errorMessage += '<p style="color:red">Your name cannot be blank!</p>'
+				}
+
+				$('.error').html(errorMessage)
+
+				if (errorMessage == '') {
+					alert('Thanks ' + name + '! Your Cruise leaves on ' + tripFrom + ' and returns on ' + tripTo + '!')
+				}
+
+				return false
+			})
+		})
+	</script>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+		input {
+			display: block;
+			margin-bottom: 7px
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<h2>Welcome to the Codingdojo plan-a-Cruise!</h2>
+	<form>
+		<input type="text" name="trip-from" placeholder="From" class="datepicker">
+		<input type="text" name="trip-to" placeholder="To" class="datepicker">
+		<input type="text" name="name" placeholder="Name">
+		<input type="submit" name="submit" val="Check Dates">
+	</form>
+	<div class="error"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+h1 {
+	font-size: 4em;
+	font-family: Arial, sans-serif;
+}
+
+.waddup {
+	color: red;
+}
+
+img {
+	margin: 20px;
+	border: 5px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.row {
+	text-align: center;
+}
+
+button {
+	border: 0;
+	background-color: green;
+	padding: 15px;
+	color: #FFF;
+	font-size: 1.5em;
+	font-weight: lighter;
+}

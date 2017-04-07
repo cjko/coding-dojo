@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Accordion and Tab</title>
+	<link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.accordion').accordion()
+			$('.tabs').tabs()
+			$('button').click(function(){
+				alert('Hello world!')
+			})
+		})
+	</script>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			border-bottom: 1px solid black;
+		}
+		.wrapper {
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<h1>Accordion</h1>
+	<div class="accordion">
+		<h3>About Me</h3>
+		<div>
+			<p>My name is Colin.</p>
+		</div>
+		<h3>Interests</h3>
+		<dir>
+			<p>I like to play basketball.</p>
+		</dir>
+		<h3>Contact</h3>
+		<div>
+			<p>972-379-9293</p>
+		</div>
+	</div>
+	<h1>Tabs</h1>
+	<div class="tabs">
+		<ul>
+			<li><a href="#aboutme">About Me</a></li>
+			<li><a href="#interests">Interests</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+		<div id="aboutme"><p>My name is Colin.</p></div>
+		<div id="interests"><p>I like to play basketball.</p></div>
+		<div id="contact"><p>972-379-9293</p></div>
+	</div>
+	<h1>Button</h1>
+	<div class="buttons">
+		<button class="ui-button ui-widget ui-corner-all">Click me!</button>
+	</div>
+</div>
+
+</body>
+</html>

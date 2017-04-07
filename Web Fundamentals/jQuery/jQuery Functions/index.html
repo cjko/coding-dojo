@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Functions</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			//Click
+			$('#click button').click(function(){
+				alert("Hello world!");
+			})
+
+			//Hide
+			$('#hide button').click(function(){
+				$('#hide').hide();
+			})
+
+			//Show
+			$('#show button').click(function(){
+				$('#hide').show();
+			})
+
+			//Toggle
+			$('#toggle button').click(function(){
+				$('#toggle span').toggle()
+			})
+
+			//Add Class
+			$('#addClass button').click(function(){
+				$('#addClass p').toggleClass('red')
+			});
+
+			//Slide Toggle
+			$('#slidetoggle button').click(function(){
+				$('#slidetoggle img').slideToggle('slow');
+			});
+
+			//Append
+			$('#append button').click(function(){
+				$('#append p').append(" More words!");
+			});
+
+			//Fade Out
+			$('#fadeOut button').click(function(){
+				$('#slidetoggle img').fadeOut('slow');
+			})
+
+			//Fade In
+			$('#fadeIn button').click(function(){
+				$('#slidetoggle img').fadeIn('slow');
+			})
+
+		});
+	</script>
+
+</head>
+<body>
+<div class="wrapper">
+
+	<div class="jQueryFunction" id="click">
+		<button>Click</button>
+		<div class="description">
+			<h1>Click</h1>
+			<p>Click the button for an alert</p>
+		</div>
+	</div>
+
+	<div class="jQueryFunction" id="hide">
+		<button>Click to hide</button>
+		<div class="description">
+			<h1>Hide</h1>
+			<p>Click the button to hide this function's description after it is hidden</p>
+		</div>
+	</div>
+
+	<div class="jQueryFunction" id="show">
+		<button>Click to show</button>
+		<div class="description">
+			<h1>Show</h1>
+			<p>Click the button to show the above function's description</p>
+		</div>
+	</div>
+
+	<div class="jQueryFunction" id="toggle">
+		<button>Click to toggle</button>
+		<div class="description">
+			<h1>Toggle</h1>
+			<p>Click the button to toggle this text: <span>TOGGLE</span></p>
+		</div>
+	</div>
+	
+	<div class="jQueryFunction" id="addClass">
+		<button>Add Class</button>
+		<div class="description">
+			<h1>AddClass</h1>
+			<p>Click the button to add class 'red' to this paragraph</p>
+		</div>
+	</div>
+
+	<div class="jQueryFunction" id="slidetoggle">
+		<button>Slide Toggle</button>
+		<div class="description">
+			<h1>Slide Toggle</h1>
+			<p>Click the button to slidetoggle a hidden image</p>
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Dirk_Nowitzki_in_Frankfurt_am_Main_%282011%29.jpg/220px-Dirk_Nowitzki_in_Frankfurt_am_Main_%282011%29.jpg">
+		</div>
+	</div>
+
+	<div class="jQueryFunction" id="append">
+		<button>Append</button>
+		<div class="description">
+			<h1>Append</h1>
+			<p>Click the button to append a new paragraph!</p>
+		</div>
+	</div>
+
+	<div class="jQueryFunction" id="fadeOut">
+		<button>Click to Fade Out</button>
+		<div class="description">
+			<h1>Fade Out</h1>
+			<p>Click the button to fade out the image under Slide Toggle!</p>
+		</div>
+	</div>
+
+	<div class="jQueryFunction" id="fadeIn">
+		<button>Click to Fade In</button>
+		<div class="description">
+			<h1>Fade In</h1>
+			<p>Click the button to fade in the image under Slide Toggle!</p>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>

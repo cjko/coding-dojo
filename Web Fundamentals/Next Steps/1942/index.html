@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>1942 Game</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div id="gameview">
+
+	</div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+// var gameView = document.getElementById('gameview')
+
+
+//Player ship object
+var playerShip = {
+		x: 600,
+		y: 400
+	}
+var x = playerShip.x;
+var y = playerShip.y;
+
+//Load player ship
+function playerLoad() {	
+	document.getElementById('wrapper').innerHTML = '<div id="player"></div>'
+}
+
+//
+function shootLaser() {
+	console.log('lazer!')
+	document.getElementById('wrapper').innerHTML = '<div class=".laser"></div>'
+
+}
+
+playerLoad();
+
+//Key press detection
+document.onkeydown = function(e) {
+	var player = document.getElementById('player')
+	console.log(e.keyCode)
+	if (e.keyCode == 37 && x > 0) {
+		x -= 50
+	} else if (e.keyCode == 39 && x < 1550){
+		x += 50
+	} else if (e.keyCode == 38 && y > 0) {
+		y -= 50
+	} else if (e.keyCode == 40 && y < 850) {
+		y += 50
+	}
+	if (e.keyCode == 32) {
+		shootLaser();
+	}
+	player.style.left = x + "px"
+	player.style.top = y + "px"
+}
+
+
+
+</script>
+
+</html>
