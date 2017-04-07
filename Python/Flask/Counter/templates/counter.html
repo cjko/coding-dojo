@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+</head>
+<body>
+<div class="wrapper" style="text-align: center">
+
+	<h1>Counter</h1>
+	{% if counter == 1 %}
+		<p>{{counter}} time.</p>
+	{% else %}
+		<p>{{counter}} times.</p>
+	{% endif %}
+	<p>
+		<form action='/modifyCounter' method='post'>
+			<input type="submit" name="action" value="+2">
+		</form>
+		<form action='/modifyCounter' method='post'>
+			<input type="submit" name="action" value="Reset">
+		</form>
+	</p>
+</div>
+</body>
+</html>

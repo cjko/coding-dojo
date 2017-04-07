@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Great Number Game</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+			padding: 0;
+			margin: 0;
+		}
+		.wrapper {
+			text-align: center;
+		}
+		.console {
+			width: 300px;
+			height: 300px; 
+			color: #FFF;
+			margin: 20px auto;
+			/*padding: 60px 0;*/
+		}
+		.console h2,
+		.console p {
+			margin: 0 0 10px 0;
+		}
+		.incorrect {
+			background-color: red;
+		}
+		.correct {
+			background-color: green
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<h1>Welcome to the Great Number Game!</h1>
+	<p>I am thinking of a number between 1 and 100</p>
+	<p>Take a guess!</p>
+
+	{% if proximity == 'was the number!' %}
+		<div class="console correct">
+			<h2>{{numberToGuess}} {{ proximity }}</h2>
+			<p>It took you {{numberOfGuesses}} tries.</p>
+			<p>
+				<form action="/reset" method='post'>
+					<input type="submit" name="reset" value='Play Again'>
+				</form>
+			</p>
+		</div>
+	{% elif proximity != '' %}
+		<div class="console incorrect">
+			<h2>{{ proximity }}</h2>
+		</div>
+	{% endif %}
+
+	<form action="/guess" method='post'>
+		<input type="text" name="guess">
+		<input type="submit" name="submit" value="Guess">
+	</form>
+
+</div>
+</body>
+</html>
