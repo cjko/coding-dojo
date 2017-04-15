@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users Index</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+		table {
+			width: 700px;
+			margin-bottom: 40px;
+		}
+	</style>
+</head>
+<body>
+<h1>Users</h1>
+<table>
+	<thead>
+		<th>id</th>
+		<th>Full Name</th>
+		<th>Email</th>
+		<th>Created At</th>
+		<th>Actions</th>
+	</thead>
+	<tbody>
+		<!-- USER ROW -->
+		{% for user in users %}
+		<tr>
+			<td>{{ user.id }}</td>
+			<td>{{ user.full_name }}</td>
+			<td>{{ user.email }}</td>
+			<td>{{ user.formatted_date }}</td>
+			<td>
+				<a href="/users/{{ user.id }}">Show</a>
+				<a href="/users/{{ user.id }}/edit">Edit</a>
+				<a href="/users/{{ user.id }}/destroy">Delete</a>
+			</td>
+		</tr>
+		{% endfor %}
+		<!-- END USER ROW -->
+	</tbody>
+</table>
+<a href="/users/new">Add a new user</a>
+</body>
+</html>

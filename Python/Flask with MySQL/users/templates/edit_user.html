@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit User</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+<h1>Edit User {{ user[0].id }}</h1>
+<form action="/users/{{ user[0].id }}/update" method='post'>
+	<p>First name: <input type="text" name="first_name" value="{{ user[0].first_name }}"></p>
+	<p>Last name: <input type="text" name="last_name" value="{{ user[0].last_name }}"></p>
+	<p>Email: <input type="email" name="email" value="{{ user[0].email }}"></p>
+	<p><input type="submit" name="submit" value="Update"></p>
+</form>
+<p>
+	<a href="/users/{{ user[0].id }}">Show</a> | <a href="/users">Go Back</a>
+</p>
+</body>
+</html>

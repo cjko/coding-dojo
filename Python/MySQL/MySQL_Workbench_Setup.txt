@@ -1,0 +1,4 @@
+use twitter;
+select * from faves
+join users
+on users.id = faves.user_id;

@@ -1,0 +1,26 @@
+* {
+	font-family: Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+.wrapper {
+	text-align: center;
+}
+
+.module {
+	display: inline-block;
+	vertical-align: top;
+	width: 200px;
+	margin: 0 20px;
+}
+
+.blurb {
+	border: 1px solid black;
+	height: 150px;
+	padding: 10px;
+}
+h1, h3, a {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

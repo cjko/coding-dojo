@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Success Page</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div style="border: 1px solid black; width: 400px; background-color: lightgreen">The email address you entered ({{ email }}) is a VALID email address! Thank you!</div>
+
+	<h2 style="text-decoration: underline">Email Addresses Entered:</h2>
+	<table style="width: 400px">
+		<tbody>
+			{% for user in users %}
+			<tr>
+				<td>{{ user.email }}</td>
+				<td>{{ user.created_at }}</td>
+				<td>
+					<form action="/delete" method="post">						
+						<input type="hidden" name="id" value="{{ user.id }}">
+						<input type="submit" name="delete" value="Delete">
+					</form>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+<!-- 	<h2 style="text-decoration: underline">Delete user:</h2>
+	<form action="/delete" method="post">
+		<p>Email: <input type="text" name="email"></p>
+		<input type="submit" name="submit">
+	</form> -->
+</div>
+</body>
+</html>

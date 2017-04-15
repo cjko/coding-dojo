@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email Validation</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	{% if message != '' %}
+		<div style="border: 1px solid black; width: 300px; background-color: red; color: #FFF">{{ message }}</div>
+	{% endif %}
+	<form action="/validate" method="post">
+		<p>Email Address: <input type="text" name="email"></p>
+		<input type="submit" name="submit">
+	</form>
+</div>
+</body>
+</html>
