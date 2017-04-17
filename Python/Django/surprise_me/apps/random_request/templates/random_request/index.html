@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Surprise Me!</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<p style="color: red">{% for message in messages %}{{ message }}{% endfor %}</p>
+	<h1>Surprise Me!</h1>
+	<form action="/generate" method="post">
+		{% csrf_token %}
+		<p>Pick a number between 1 and 9: <input type="text" name="user_number"></p>
+		<input type="submit" name="submit" value="Ready!">
+	</form>
+</div>
+</body>
+</html>

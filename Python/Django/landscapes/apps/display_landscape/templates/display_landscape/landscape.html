@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ landscape }}</title>
+	<style type="text/css">
+		img {
+			width: 60%;
+		}
+	</style>
+</head>
+<body>
+{% load staticfiles %}
+<img src="{% static ''%}{{ filename }}" alt="{{ landscape }}">
+</body>
+</html>

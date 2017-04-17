@@ -12,6 +12,9 @@ def renderNinja():
 
 @app.route('/ninja/<ninja_color>')
 def renderColor(ninja_color):
-	return render_template('color.html', color=ninja_color)
+
+	if ninga_color == 'red'
+		filename = "raphael.jpg"
+	return render_template('color.html', filename=filename)
 
 app.run(debug=True)

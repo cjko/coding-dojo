@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Landscapes</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+		.wrapper {
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<h2>Welcome! Enter any number 1 - 50 as a url parameter, for example "/32"</h2>
+	{% for message in messages %}
+	<p style="color: red">{{ message }}</p>
+	{% endfor %}
+</div>
+</body>
+</html>
