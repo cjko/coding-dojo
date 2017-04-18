@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+		table {
+			width: 600px;
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+<table>
+	<thead>
+		<th>id</th>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Category</th>
+	</thead>
+	<tbody>
+		{% for book in library %}
+		<tr>
+			<td>{{ book.id }}</td>
+			<td>{{ book.title }}</td>
+			<td>{{ book.author }}</td>
+			<td>{{ book.category }}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<h1>Add a Book</h1>
+<form action="/create" method="post">
+	{% csrf_token %}
+	<p>Title:</p>
+	<p><input type="text" name="title"></p>
+	<p>Category:</p>
+	<p><input type="text" name="category"></p>
+	<p>Author:</p>
+	<p><input type="text" name="author"></p>
+	<p><input type="submit" name="submit" value="Submit!"></p>
+</form>
+</body>
+</html>
