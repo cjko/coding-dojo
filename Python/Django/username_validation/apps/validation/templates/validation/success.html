@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Username Validator</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+		h3 {
+			text-decoration: underline
+		}
+		table {
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+{% if messages %}
+	{% for message in messages %}
+	<div style="background-color: green; border: 1px solid black; width: 300px; text-align: center; color: #FFF">{{ message }}</div>
+	{% endfor %}
+{% endif %}
+<h3>Usernames entered:</h3>
+<table>
+	<tbody>
+		{% for user in users %}
+			<tr>
+				<td>{{ user.name }}</td>
+				<td>{{ user.created_at }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+</body>
+</html>

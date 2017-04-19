@@ -1,0 +1,500 @@
+  662  touch __init__.py
+  663  mkdir new_app/templates/
+  664  cd ..
+  665  python manage.py runserver
+  666  cd ..
+  667  ls
+  668  django-admin startproject hello_world
+  669  ls
+  670  cd hell
+  671  cd hello_world/
+  672  ls
+  673  mkdir apps/
+  674  cd apps/
+  675  touch __init__.py
+  676  python ../manage.py startapp print_hello_world
+  677  mkdir print_hello_world/templates/print_hello_world/
+  678  mkdir print_hello_world/templates/
+  679  mkdir print_hello_world/templates/print_hello_world/
+  680  cd print_hello_world/templates/print_hello_world/
+  681  touch index.html
+  682  cd ..
+  683  cd ..
+  684  cd ..
+  685  ls
+  686  cd ..
+  687  ls
+  688  python manage.py runserver
+  689  cd ..
+  690  ls
+  691  django-admin startproject portfolio
+  692  ls
+  693  cd portfolio/
+  694  ls
+  695  mkdir apps/
+  696  cd apps
+  697  python ../manage.py startapp my_portfolio
+  698  ls
+  699  cd my_portfolio/
+  700  mkdir templates/
+  701  mkdir templates/my_portfolio/
+  702  cd ..
+  703  ls
+  704  touch __init__.py
+  705  ls
+  706  cd ..
+  707  ls
+  708  python manage.py runserver
+  709  cd ..
+  710  cd ..
+  711  ls
+  712  cd Django/
+  713  ls
+  714  django-admin startproject the_real_portfolio
+  715  ls
+  716  cd the_real_portfolio/
+  717  ls
+  718  mkdir apps/
+  719  ls
+  720  mkdir apps/my_portfolio/
+  721  cd apps/
+  722  touch __init__.py
+  723  ls
+  724  cd my_portfolio/
+  725  ls
+  726  cd ..
+  727  rm -rf my_portfolio/
+  728  ls
+  729  python ../manage.py my
+  730  python ../manage.py startapp my
+  731  ls
+  732  rm -rf my/
+  733  ls
+  734  python ../manage.py startapp my_portfolio
+  735  ls
+  736  cd my_portfolio/
+  737  ls
+  738  touch urls.py
+  739  mkdir templates/
+  740  cd templates/
+  741  ls
+  742  touch index.html about.html projects.html testimonials.html
+  743  cd ../..
+  744  cd ..
+  745  ls
+  746  python manage.py runserver
+  747  cd ..
+  748  ls
+  749  django-admin startproject time_display
+  750  ls
+  751  cd time_display/
+  752  ls
+  753  mkdir apps/
+  754  python manage.py apps/time
+  755  cd apps
+  756  python manage.py startapp apps/time
+  757  ls
+  758  cd ..
+  759  ls
+  760  python manage.py startapp apps/time
+  761  cd apps
+  762  python ../manage.py startapp time
+  763  python ../manage.py startapp display_time
+  764  ls
+  765  mkdir display_time/templates/
+  766  mkdir display_time/templates/display_time/
+  767  cd display_time/
+  768  ls
+  769  touch urls.py
+  770  cd ..
+  771  cd ..
+  772  ls
+  773  python manage.py runserver
+  774  cd apps/
+  775  touch __init__.py
+  776  cd ..
+  777  python manage.py runserver
+  778  cd ..
+  779  ls
+  780  django-admin startproject random_word_generator
+  781  cd random_word_generator/
+  782  mkdir apps/
+  783  cd apps
+  784  touch __init__.py
+  785  python ../manage.py startapp generator
+  786  mkdir generator/templates/
+  787  mkdir generator/templates/generator/
+  788  cd generator/
+  789  ls
+  790  touch urls.py
+  791  cd ../../..
+  792  ls
+  793  cd random_word_generator/
+  794  python manage.py makemigrations
+  795  python manage.py migrate
+  796  python manage.py runserver
+  797  cd ..
+  798  ls
+  799  django-admin startproject survey_form
+  800  ls
+  801  cd survey_form/
+  802  mkdir apps/
+  803  cd apps/
+  804  ls
+  805  python ../manage.py startapp survey
+  806  touch __init__.py
+  807  cd survey/
+  808  ls
+  809  mkdir templates/
+  810  mkdir templates/survey/
+  811  cd ..
+  812  lkls
+  813  ls
+  814  cd survey/
+  815  touch urls.py
+  816  cd ..
+  817  cd ..
+  818  ls
+  819  python manage.py makemigrations
+  820  python manage.py migrate
+  821  ls
+  822  python manage.py runserver
+  823  cd..
+  824  cd ..
+  825  ls
+  826  django-admin startproject ninja_gold
+  827  ls
+  828  cd ninja_gold/
+  829  ls
+  830  mkdir apps/
+  831  cd apps/
+  832  ls
+  833  python ../manage.py startapp ninja_gold
+  834  python ../manage.py startapp gold
+  835  cd gold
+  836  cd ..
+  837  touch __init__.py
+  838  ls
+  839  mkdir gold/templates/
+  840  mkdir gold/templates/gold
+  841  cd gold/
+  842  ls
+  843  touch urls.py
+  844  cd ..
+  845  ls
+  846  cd ..
+  847  ls
+  848  python manage.py runserver
+  849  python manage.py makemigrations
+  850  python manage.py migrate
+  851  python manage.py runserver
+  852  cd ~
+  853  cd Dev/Coding\ Dojo/
+  854  ls
+  855  git status
+  856  git add .
+  857  git commit -m "Week 3 Assignments"
+  858  git push -u origin master
+  859  ls
+  860  cd p
+  861  cd Python/
+  862  ls
+  863  cd Django/
+  864  ls
+  865  django-admin startproject disappearing_ninjas
+  866  cd disappearing_ninjas/
+  867  ls
+  868  mkdir apps/
+  869  cd apps/
+  870  python ../manage.py startapp ninjas
+  871  ls
+  872  touch __init__.py
+  873  cd ninjas/
+  874  touch urls.py
+  875  ls
+  876  ls
+  877  python ../../manage.py makemigrations
+  878  ls
+  879  mkdir templates/
+  880  mkdir static/
+  881  mkdir templates/ninjas/
+  882  cd templates/ninjas/
+  883  touch index.html color.html
+  884  cd ../../..
+  885  ls
+  886  cd ..
+  887  ls
+  888  python manage.py makemigrations
+  889  python manage.py migrate
+  890  python manage.py runserver
+  891  cd ..
+  892  ls
+  893  django-admin startproject surprise_me
+  894  cd sur
+  895  cd sur
+  896  cd surprise_me/
+  897  ls
+  898  mkdir apps/
+  899  cd apps/
+  900  python ../manage.py startapp random
+  901  python ../manage.py startapp random_request
+  902  touch __init__.py
+  903  cd random_request/
+  904  ls
+  905  mkdir templates/
+  906  mkdir templates/random_request/
+  907  touch urls.py
+  908  ls
+  909  touch templates/random_request/index.html
+  910  ls
+  911  cd ..
+  912  cd ..
+  913  ls
+  914  python manage.py makemigrations
+  915  python manage.py migrate
+  916  python manage.py runserver
+  917  cd ..
+  918  ls
+  919  django-admin startproject landscapes
+  920  ls
+  921  cd landscapes/
+  922  ls
+  923  cd apps/
+  924  mkdir apps/
+  925  cd apps/
+  926  python ../manage.py startapp display_landscape
+  927  ls
+  928  cd display_landscape/
+  929  mkdir templates/
+  930  mkdir templates/display_landscapes
+  931  mkdir static/
+  932  touch urls.py
+  933  cd ..
+  934  ls
+  935  touch __init__.py
+  936  ls
+  937  cd ..
+  938  python manage.py runserver
+  939  python manage.py makemigrations
+  940  python manage.py migrate
+  941  python manage.py runserver
+  942  cd ~
+  943  cd Dev/Coding\ Dojo/
+  944  ls
+  945  git status
+  946  git add .
+  947  git commit -m "More Coding Dojo assignments"
+  948  git push -u origin master
+  949  ls
+  950  cd Python/
+  951  ls
+  952  cd Django/
+  953  ls
+  954  django-admin startproject products
+  955  ls
+  956  cd products/
+  957  ls
+  958  mkdir apps/
+  959  cd apps/
+  960  python ../manage.py products
+  961  python ../manage.py startapp products
+  962  python ../manage.py startapp new_model
+  963  ls
+  964  cd new_model/
+  965  ls
+  966  cd ..
+  967  touch __init__.py
+  968  ls
+  969  cd new_model/
+  970  ls
+  971  cd ..
+  972  cd ..
+  973  ls
+  974  python manage.py shell
+  975  python manage.py makemigrations
+  976  python manage.py makemigrations
+  977  python manage.py migrate
+  978  python manage.py makemigrations
+  979  python manage.py makemigrations
+  980  python manage.py migrate
+  981  python manage.py shell
+  982  python manage.py shell
+  983  ls
+  984  cd ..
+  985  ls
+  986  cd time_display
+  987  python manage.py runserver
+  988  cd ..
+  989  ls
+  990  django-admin startproject books_model
+  991  ls
+  992  cd books_model/
+  993  mkdir apps/
+  994  ls
+  995  cd apps/
+  996  python ../manage.py startapp new_model
+  997  touch __init__.py
+  998  ls
+  999  cd new_model/
+ 1000  ls
+ 1001  cd ..
+ 1002  cd ..
+ 1003  ls
+ 1004  python manage.py makemigrations
+ 1005  python manage.py makemigrations
+ 1006  python manage.py migrate
+ 1007  python manage.py shell
+ 1008  python manage.py makemigrations
+ 1009  python manage.py makemigrations
+ 1010  python manage.py migrate
+ 1011  python manage.py makemigrations
+ 1012  python manage.py migrate
+ 1013  python manage.py shell
+ 1014  cd ..
+ 1015  ls
+ 1016  django-admin startproject the_wall_models
+ 1017  cd the_
+ 1018  cd the_wall_models/
+ 1019  ls
+ 1020  mkdir apps/
+ 1021  cd apps/
+ 1022  python ../manage.py startapp new_models
+ 1023  touch __init__.py
+ 1024  ls
+ 1025  ls
+ 1026  cd new_models/
+ 1027  cd ..
+ 1028  ls
+ 1029  cd ..
+ 1030  ls
+ 1031  python manage.py makemigrations
+ 1032  python manage.py makemigrations
+ 1033  cd ~
+ 1034  cd Desktop/
+ 1035  git clone git://github.com/django-extensions/django-extensions.git
+ 1036  cd django-extensions/
+ 1037  python setup.py install
+ 1038  cd ~
+ 1039  ls
+ 1040  cd Dev/Coding\ Dojo/
+ 1041  ls
+ 1042  cd Python/
+ 1043  ls
+ 1044  cd Django/
+ 1045  cd the_wall_models/
+ 1046  ls
+ 1047  python manage.py makemigrations
+ 1048  python manage.py makemigrations
+ 1049  python manage.py migrate
+ 1050  python manage.py graph_models -a -o myapp_models.png
+ 1051  cd ~
+ 1052  cd Desktop/
+ 1053  git clone https://github.com/pygraphviz/pygraphviz.git
+ 1054  cd pygraphviz/
+ 1055  ls
+ 1056  pytnhon setup.py install
+ 1057  python setup.py install
+ 1058  pip install pygraphviz
+ 1059  pip install graphviz
+ 1060  pip install pygraphviz
+ 1061  cd ~
+ 1062  ls
+ 1063  cd Dev/Coding\ Dojo/
+ 1064  ls
+ 1065  cd Python/
+ 1066  cd Django/
+ 1067  ls
+ 1068  cd the_wall_models/
+ 1069  ls
+ 1070  python manage.py graph_models -a -o myapp_models.png
+ 1071  pip install pygraphviz
+ 1072  brew install graphviz
+ 1073  pip install pygraphviz
+ 1074  cd ~
+ 1075  cd Desktop/
+ 1076  cd pygraphviz/
+ 1077  ls
+ 1078  python setup.py install
+ 1079  pip pydotplus
+ 1080  pip install pydotplus
+ 1081  cd ~
+ 1082  cd Dev/Coding\ Dojo/Python/Django/
+ 1083  cd the_wa
+ 1084  cd the_wall_models
+ 1085  ls
+ 1086  python manage.py graph_models -a -o myapp_models.png
+ 1087  cd ..
+ 1088  \ls
+ 1089  ls
+ 1090  clear
+ 1091  ls
+ 1092  django-admin startproject full_stack_books
+ 1093  cd full_stack_books/
+ 1094  ls
+ 1095  mkdir apps/
+ 1096  touch apps/__init__.py
+ 1097  cd apps/
+ 1098  python ../manage.py startapp library
+ 1099  ls
+ 1100  cd library
+ 1101  mkdir templates/
+ 1102  mkdir templates/library/
+ 1103  touch urls.py
+ 1104  touch templates/library/index.html
+ 1105  cd ..
+ 1106  cd ..
+ 1107  python manage.py makemigrations
+ 1108  python manage.py migrate
+ 1109  python manage.py runserver
+ 1110  cd ..
+ 1111  cd ..
+ 1112  cd ..
+ 1113  git status
+ 1114  git add .
+ 1115  git commit -m "More Coding Dojo assignments: Full Stack Django"
+ 1116  git push -u origin master
+ 1117  cd Python/Django/
+ 1118  ls
+ 1119  django-admin startproject courses
+ 1120  cd courses/
+ 1121  ls
+ 1122  mkdir apps/
+ 1123  touch apps/__init__.py
+ 1124  cd apps/
+ 1125  python ../manage.py startapp catalog
+ 1126  cd catalog/
+ 1127  ls
+ 1128  mkdir templates/
+ 1129  mkdir templates/catalog
+ 1130  touch urls.py
+ 1131  clear
+ 1132  cd ~
+ 1133  ls
+ 1134  cd Dev/Coding\ Dojo/
+ 1135  ls
+ 1136  cd Python/
+ 1137  cd Django/
+ 1138  ls
+ 1139  django-admin startproject group_project
+ 1140  cd group_project/
+ 1141  ls
+ 1142  mkdir apps/
+ 1143  touch apps/__init__.py
+ 1144  cd apps/
+ 1145  python ../manage.py startapp travel
+ 1146  cd travel
+ 1147  ls
+ 1148  mkdir templates/
+ 1149  mkdir templates/travel
+ 1150  touch urls.py
+ 1151  clear
+ 1152  cd ..
+ 1153  cd ..
+ 1154  ls
+ 1155  python manage.py makemigrations
+ 1156  python manage.py makemigrations
+ 1157  python manage.py migrate
+ 1158  python manage.py shell
+ 1159  ls
+ 1160  python manage.py runserver
+ 1161  history > command_history.txt

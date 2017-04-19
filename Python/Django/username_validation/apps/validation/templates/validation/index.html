@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Username Validator</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	{% if messages %}
+		{% for message in messages %}
+		<div style="background-color: red; border: 1px solid black; width: 300px; text-align: center; color: #FFF">{{message}}</div>
+		{% endfor %}
+	{% endif %}
+	<form action="/validate" method="post">
+		{% csrf_token %}
+		<p>Username: <input type="text" name="username"></p>
+		<p><input type="submit" name="submit" value="Submit"></p>
+	</form>
+</div>
+</body>
+</html>

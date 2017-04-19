@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete a course</title>
+	<style type="text/css">
+		* {
+			font-family: Arial, sans-serif;
+		}
+		form {
+			margin-bottom: 60px;
+		}
+	</style>
+</head>
+<body>
+<h1>Are you sure you want to delete the following course?</h1>
+<p>Name: {{ name }}</p>
+<p>Description: {{ description }}</p>
+
+<p><a href="/"><button>No</button></a> <a href="/delete/{{ id }}"><button style="background-color: red;">Yes! I want to delete this</button></a></p>
+
+</body>
+</html>

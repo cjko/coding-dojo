@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travel Destinations</title>
+</head>
+<body>
+<table>
+	<thead>
+		<th>Country</th>
+		<th>City</th>
+		<th>Description</th>
+	</thead>
+	<tbody>
+		{% for destination in destinations %}
+			<tr>
+				<td>{{ destination.country }}</td>
+				<td>{{ destination.city }}</td>
+				<td>{{ destination.description }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+
+<table>
+	<thead>
+		<th>First Name</th>
+		<th>Last Name</th>
+		<th>Member ID</th>
+		<th>Current Country</th>
+		<th>Current City</th>
+	</thead>
+	<tbody>
+		{% for tourist in tourists %}
+			<tr>
+				<td>{{ tourist.first_name }}</td>
+				<td>{{ tourist.last_name }}</td>
+				<td>{{ tourist.memberID }}</td>
+				<td>{{ tourist.destination_id.country }}</td>
+				<td>{{ tourist.destination_id.city }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
+</body>
+</html>
