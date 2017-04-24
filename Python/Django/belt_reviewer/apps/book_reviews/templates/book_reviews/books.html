@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Books</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://use.fontawesome.com/680ef57b8e.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6">
+			<h2>Welcome, {{user.first_name}}!</h2>
+		</div>
+		<div class="col-lg-6">
+			<a href="/books/add">Add Book and Review</a>
+			<a href="/logout">Logout</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<h4>Recent Book Reviews</h4>
+			{% for book in books %}
+				<h5>{{ book.title }} by {{ book.author.name }}</h5>
+				<ul>
+					{% for review in reviews %}
+						{% if book.id == review.book.id %}
+							<li>
+								<p>
+								{% with ''|center:review.rating as range %}
+									{% for i in range %}
+										<img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-128.png" height="10">
+									{% endfor%}
+								{% endwith%}
+								</p>
+								<p>{{ review.content }}</p>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			{% endfor %}
+		</div>
+		<div class="col-lg-6">
+			<h4>Other Books with Reviews</h4>
+		</div>
+		
+	</div>
+</div>
+</body>
+</html>

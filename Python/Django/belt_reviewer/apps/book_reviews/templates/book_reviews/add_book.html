@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add Book</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://use.fontawesome.com/680ef57b8e.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+			<h3>Add a new book title and review</h3>
+			<div class="panel panel-default">
+            	<div class="panel-body">
+                    <form action="/books/create_book" method="post">
+                    {% csrf_token %}
+                        
+                        <label for="title">Book Title</label>
+                        <input name="title" type="text" class="form-control" />
+                        
+                        <br>
+                       
+                        <label>Author</label>
+                        <ul style="list-style-type: none">
+                            <li>                            
+                            <label for="author_list">Choose from the list:</label>
+                            </li>
+                            <li>
+                            <select class="custom-select form-control" name="author_list">
+                                <option value="">Select author..</option>
+                                {% for author in authors %}
+                                <option value="{{author.name}}">{{author.name}}</option>
+                                {% endfor %}
+                            </select>
+                            </li>
+                            <br>
+                            <li>
+
+                            <label for="author_input">Or add a new author:</label>
+                            <input class="form-control" type="text" name="author_input">
+                            </li>
+                        </ul>
+                        
+                    
+                     	
+                        <label for="review">Review</label>
+                        <textarea name="review" rows="10" class="form-control"></textarea>
+                      
+                        <br>
+                  
+                        <label for="rating">Rating</label>
+                        <select class="custom-select form-control" name="rating">
+                            <option value="">Select rating..</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                        <hr>
+                        <button type="submit" class="btn btn-success ">Add Book and Review</button>
+                    </form>
+                </div>
+			</div>
+		</div>
+        <div class="col-lg-4">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-danger">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        </div>
+	</div>
+</div>
+</body>
+</html>

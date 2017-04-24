@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{user.first_name}} {{user.last_name}} : {{user.handle}}</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://use.fontawesome.com/680ef57b8e.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 well">
+			<h4>User Alias: {{user.handle}}</h4>
+			<h4>Name: {{user.first_name}} {{user.last_name}}</h4>
+			<h4>Email: {{user.email}}</h4>
+			<h4>Total Reviews: {{reviews.count}}</h4>
+		</div>
+		<div class="col-lg-6 well">
+		Posted Reviews on the following books:
+		{% for review in reviews %}
+			<p><a href="/books/{{review.book.id}}">{{review.book.title}}</a></p>
+		{% endfor %}
+		</div>
+	</div>
+</div>
+</body>
+</html>

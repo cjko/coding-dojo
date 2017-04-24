@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://use.fontawesome.com/680ef57b8e.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>Welcome!</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-4">
+			<h3>Register</h3>
+			<div class="panel panel-default">
+            	<div class="panel-body">
+                    <form action="/register" method="post">
+                    {% csrf_token %}
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                            <input name="first_name" type="text" class="form-control" placeholder="First Name" />
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-circle-o-notch"></i></span>
+                            <input name="last_name" type="text" class="form-control" placeholder="Last Name" />
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                            <input name="handle" type="text" class="form-control" placeholder="Desired Username" />
+                        </div>
+                        <div class="form-group input-group">
+                        	<span class="input-group-addon">@</span>
+                            <input name="email" type="text" class="form-control" placeholder="Your Email" />
+                        </div>
+	                    <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input name="password" type="password" class="form-control" placeholder="Enter Password" />
+                        </div>
+                     	<div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            <input name="confirm_pw" type="password" class="form-control" placeholder="Retype Password" />
+                        </div>
+                                     
+                        <button type="submit" class="btn btn-success ">Register Me</button>
+                    </form>
+                </div>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<h3>Login</h3>
+			<div class="panel panel-default">
+            	<div class="panel-body">
+                    <form action="/login" method="post">
+                    {% csrf_token %}
+                        <div class="form-group input-group">
+                        	<span class="input-group-addon">@</span>
+                            <input name="email" type="text" class="form-control" placeholder="Your Email" />
+                        </div>
+	                    <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                            <input name="password" type="password" class="form-control" placeholder="Enter Password" />
+                        </div>
+                                     
+                        <button type="submit" class="btn btn-primary ">Login</button>
+                    </form>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{book.title}} by {{book.author.name}}</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://use.fontawesome.com/680ef57b8e.js"></script>
+</head>
+<body>
+<h1>{{book.title}} by {{book.author.name}}</h1>
+{% for review in reviews %}
+	{{review.rating}}
+	{{review.content}}
+	{{review.user.first_name}} {{review.user.last_name}}
+	{{review.created_at}}
+
+{% endfor %}
+
+<form action="/books/{{book.id}}/create_review" method="post">
+	{% csrf_token %}
+	<textarea name="review"></textarea>
+	<select name="rating">
+        <option value="">Select rating..</option>
+        <option value="5">5</option>
+        <option value="4">4</option>
+        <option value="3">3</option>
+        <option value="2">2</option>
+        <option value="1">1</option>
+    </select>
+    <input class="btn btn-success" type="submit" name="submit" value="Submit Review">
+</form>
+
+{% if messages %}
+	{% for message in messages %}
+		<div class="alert alert-danger">{{message}}</div>
+	{% endfor %}
+{% endif %}
+
+</body>
+</html>
