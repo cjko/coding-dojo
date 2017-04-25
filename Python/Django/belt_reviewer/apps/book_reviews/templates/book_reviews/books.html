@@ -4,6 +4,11 @@
 	<title>Books</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://use.fontawesome.com/680ef57b8e.js"></script>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+		}
+	</style>
 </head>
 <body>
 <div class="container">
@@ -19,21 +24,23 @@
 	<div class="row">
 		<div class="col-lg-6">
 			<h4>Recent Book Reviews</h4>
+			<br>
 			{% for book in books %}
-				<h5>{{ book.title }} by {{ book.author.name }}</h5>
+				<h4><a href="/books/{{book.id}}">{{ book.title }}</a> by {{ book.author.name }}</h4>
 				<ul>
 					{% for review in reviews %}
 						{% if book.id == review.book.id %}
-							<li>
+							<li class="well">
 								<p>
 								{% with ''|center:review.rating as range %}
 									{% for i in range %}
-										<img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-128.png" height="10">
+										<img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-128.png" height="15">
 									{% endfor%}
 								{% endwith%}
 								</p>
-								<p>{{ review.content }}</p>
+								<p><a href="/users/{{review.user.id}}">{{review.user.first_name}}</a> says: {{ review.content }}</p>
 							</li>
+							<hr>
 						{% endif %}
 					{% endfor %}
 				</ul>
@@ -41,6 +48,11 @@
 		</div>
 		<div class="col-lg-6">
 			<h4>Other Books with Reviews</h4>
+			<div style="overflow: scroll">
+			{% for book in other_books %}
+				<a href="/books/{{book.id}}">{{book.title}}</a>
+			{% endfor %}
+			</div>
 		</div>
 		
 	</div>

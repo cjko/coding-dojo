@@ -4,36 +4,60 @@
 	<title>{{book.title}} by {{book.author.name}}</title>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://use.fontawesome.com/680ef57b8e.js"></script>
+	<style type="text/css">
+		ul {
+			list-style-type: none;
+		}
+	</style>
 </head>
 <body>
-<h1>{{book.title}} by {{book.author.name}}</h1>
-{% for review in reviews %}
-	{{review.rating}}
-	{{review.content}}
-	{{review.user.first_name}} {{review.user.last_name}}
-	{{review.created_at}}
-
-{% endfor %}
-
-<form action="/books/{{book.id}}/create_review" method="post">
-	{% csrf_token %}
-	<textarea name="review"></textarea>
-	<select name="rating">
-        <option value="">Select rating..</option>
-        <option value="5">5</option>
-        <option value="4">4</option>
-        <option value="3">3</option>
-        <option value="2">2</option>
-        <option value="1">1</option>
-    </select>
-    <input class="btn btn-success" type="submit" name="submit" value="Submit Review">
-</form>
-
-{% if messages %}
-	{% for message in messages %}
-		<div class="alert alert-danger">{{message}}</div>
-	{% endfor %}
-{% endif %}
-
+<div class="container">
+	<div class="row">
+		<h1>{{book.title}} by {{book.author.name}}</h1>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<h4>Reviews</h4>
+			{% for review in reviews %}
+			<ul class="well">
+				<li>
+					{% with ''|center:review.rating as range %}
+						{% for i in range %}
+							<img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/star-128.png" height="15">
+						{% endfor%}
+					{% endwith%}
+				</li>
+				<li><br></li>
+				<li><a href="/users/{{review.user.id}}">{{review.user.first_name}}</a> says: {{review.content}}</li>
+				<li><br></li>
+				<li>{{review.created_at}}</li>
+			</ul>
+			<hr>
+			{% endfor %}
+			<a href="/books">Back to books</a>
+		</div>
+		<div class="col-lg-6">
+			<form action="/books/{{book.id}}/create_review" method="post">
+				{% csrf_token %}
+				<h4>Leave a review</h4>
+				<p><textarea name="review" rows="6" cols="50"></textarea></p>
+				<p><select name="rating">
+			        <option value="">Select rating..</option>
+			        <option value="5">5</option>
+			        <option value="4">4</option>
+			        <option value="3">3</option>
+			        <option value="2">2</option>
+			        <option value="1">1</option>
+			    </select></p>
+			    <p><input class="btn btn-success" type="submit" name="submit" value="Submit Review"></p>
+			</form>
+			{% if messages %}
+				{% for message in messages %}
+					<div class="alert alert-danger">{{message}}</div>
+				{% endfor %}
+			{% endif %}
+		</div>
+	</div>
+</div>
 </body>
 </html>

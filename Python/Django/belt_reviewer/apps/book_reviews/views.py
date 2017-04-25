@@ -18,6 +18,7 @@ def books(request):
 			'user': User.objects.get(id=request.session['user_id']),
 			'books': Book.objects.all().order_by('-created_at')[:3],
 			'reviews': Review.objects.all(),
+			'other_books': Book.objects.all().order_by('-created_at')[3:]
 		}
 		return render(request, 'book_reviews/books.html',context)
 	return redirect('/')
