@@ -27,9 +27,13 @@ class AddItemTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // Cancel button pressed calls cancelButtonPressed function in main BucketListView controller since it was set as the delegate
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         delegate?.cancelButtonPressed(by: self)
     }
+    
+    // Done button pressed calls doneButtonPressed function in main BucketListView controller since it was set as the delegate
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {
         if let text = textField.text {
             if text != "" {
