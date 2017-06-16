@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body>
+<div class="wrapper" style="border: 1px black solid; margin: 10px; padding: 10px; width: 300px">
+	<h2>Dojo Survey</h2>
+	<form action="/result" method="post">
+		<p>Your name: <input type="text" name="name"></p>
+		<p>
+			Dojo Location: 
+			<select name="location">
+				<option value="San Jose">San Jose</option>
+				<option value="Dallas">Dallas</option>
+				<option value="Seattle">Seattle</option>
+			</select>
+		</p>
+		<p>
+			Favorite Language:
+			<select name="language">
+				<option value="JavaScript">JavaScript</option>
+				<option value="Python">Python</option>
+				<option value="Swift">Swift</option>
+			</select>
+		</p>
+		<p>Comment (optional): </p>
+		<p><textarea name="comment"></textarea></p>
+		<p><button class="btn btn-primary" type="submit">Submit</button></p>
+	</form>
+</div>
+</body>
+</html>

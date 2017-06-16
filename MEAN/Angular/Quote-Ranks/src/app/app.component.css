@@ -1,0 +1,11 @@
+.add-quote {
+	border: 1px solid black;
+	margin: 20px;
+	padding: 20px;
+}
+
+.quote-list {
+	border: 1px solid black;
+	margin: 20px;
+	padding: 20px;
+}

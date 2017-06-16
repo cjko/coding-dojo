@@ -1,0 +1,27 @@
+.list {
+	border: 1px solid black; 
+	margin: 10px; 
+	padding: 20px
+}
+
+.content {
+	display: inline-block;
+	vertical-align: top;
+	width: 80%;
+}
+
+.total {
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 20px;
+	text-align: right;
+}
+
+.vote {
+	display: inline-block;
+	vertical-align: top;
+}
+
+button {
+	width: 100px;
+}

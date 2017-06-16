@@ -1,0 +1,24 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="wrapper">
+	<div class="calculate">
+		<h1>GitHub Score</h1>
+		<form name="form" #form="ngForm">
+			<div class="form-group">
+				<label for="username">Github Username:</label>
+				<input type="text" name="username" required class="form-control" [(ngModel)]="gitUser.login" #username="ngModel">
+				<p *ngIf="username.errors && (username.touched || form.submitted)" style="color:red;">Username is required.</p>
+			</div>
+			<button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="getGitHubUser(username.value)">Calculate my GitHub Score</button>
+		</form>
+
+	</div>
+	<div class="score">
+		<h1>Your Score: {{score}}</h1>
+		<h4 [ngClass]="{'red': tier==0, 'orange': tier==1,'green': tier==3,'blue': tier==4}">{{message}}</h4>
+	</div>
+
+	
+</div>
+

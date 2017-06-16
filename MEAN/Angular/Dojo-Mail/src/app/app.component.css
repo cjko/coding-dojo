@@ -1,0 +1,14 @@
+* {
+	font-family: Arial;
+}
+
+.wrapper {
+	border: 1px solid black;
+	padding: 20px;
+}
+
+table {
+	border-spacing: 10px;
+  	border-collapse: separate;
+  	margin: -10px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quoting Dojo</title>
+	<style type="text/css">
+		* {
+			font-family: Arial;
+		}
+		.wrapper {
+			width: 800px;
+		}
+		.quote {
+			border-bottom: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<h1>Here are the awesome quotes!</h1>
+	<% for (quote of quotes) {%>
+	<div class="quote">
+		<h3>"<%= quote.quote %>"</h3>
+		<h3><%= quote.name %> @ <%= quote.date %></h3>
+	</div>
+	<% } %>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<h1>Add a Quote</h1>
+<form name="form" #form="ngForm">
+	<div class="form-group">
+		<input type="textarea" required class="form-control" name="quote" [(ngModel)]="newQuote.quote" #quote="ngModel">
+		<p *ngIf="quote.errors && (quote.touched || form.submitted)" style="color:red">Quote is required.</p>
+	</div>
+	<div class="form-group">
+		<label for="author">Author</label>
+		<input type="author" required class="form-control" name="author" [(ngModel)]="newQuote.author" #author="ngModel">
+		<p *ngIf="author.errors && (author.touched || form.submitted)" style="color:red">Author is required.</p>
+	</div>
+	<button type="submit" class="btn btn-success" (click)="submitQuote(form)" [disabled]="!form.valid">Add Quote</button>
+</form>
+<p>New Quote: {{ newQuote | json }}</p>
+<p>Submitted: {{ submittedQuote | json}}</p>
+

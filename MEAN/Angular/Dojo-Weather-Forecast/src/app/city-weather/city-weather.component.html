@@ -1,0 +1,16 @@
+
+
+<!-- <button (click)="fetchWeather('dallas')">Click me.</button> -->
+
+<div *ngIf="cityWeather != null">
+
+	<h1>{{ cityWeather.name }}</h1>
+
+	<div style="text-align: left; padding: 10px">
+		<p>Humidity: <strong>{{ cityWeather.main.humidity }}</strong></p>
+		<p>Temperature (Average): <strong>{{ temps.temp }}º</strong></p>
+		<p>Temperature (High): <strong>{{ temps.temp_max }}º</strong></p>
+		<p>Temperature (Low): <strong>{{ temps.temp_min }}º</strong></p>
+		<p>Status: <strong>{{ cityWeather.weather[0].description }}</strong></p>
+	</div>
+</div>

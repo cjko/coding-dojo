@@ -1,0 +1,63 @@
+<html>
+<head>
+<title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type ="text/javascript">
+        $(document).ready(function (){
+            // this triggers the connection event in our server!
+            var postData = {}
+            $('#survey').on('submit', function(e) {
+                e.preventDefault();
+                postData['name'] = 'hello'
+            })
+
+            var socket = io.connect();
+            // we'll write all the socket stuff after the above line!
+            $('button').click(function (){
+			    socket.emit("button_clicked", {reason: postData});
+			});
+			socket.on('server_response', function (data){
+			    console.log('The server says: ' + data.response);
+			});
+        })
+
+
+    </script>
+</head>
+<body>
+<div class="wrapper" style="border: 1px black solid; margin: 10px; padding: 10px; width: 300px">
+    <h2>Dojo Survey</h2>
+    <form id="survey">
+        <p>Your name: <input type="text" name="name"></p>
+        <p>
+            Dojo Location: 
+            <select name="location">
+                <option value="San Jose">San Jose</option>
+                <option value="Dallas">Dallas</option>
+                <option value="Seattle">Seattle</option>
+            </select>
+        </p>
+        <p>
+            Favorite Language:
+            <select name="language">
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="Swift">Swift</option>
+            </select>
+        </p>
+        <p>Comment (optional): </p>
+        <p><textarea name="comment"></textarea></p>
+        <p><button class="btn btn-primary" type="submit">Submit</button></p>
+    </form>
+</div>
+</body>
+</html>

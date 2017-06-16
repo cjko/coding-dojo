@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="container">
+  <div class="add-quote">
+    <app-add-quote (addQuoteEmitter)="addQuote($event)"></app-add-quote>
+  </div>
+  <div class="quote-list">
+    <app-quote-list [quotes]="quotes" (voteEmitter)="vote($event)"></app-quote-list>
+  </div>
+  <div> 
+  {{quotes | json}}
+  </div>
+</div>

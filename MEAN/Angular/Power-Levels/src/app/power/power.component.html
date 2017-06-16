@@ -1,0 +1,28 @@
+<h3 style="display: inline">Initial Power Level:</h3>
+<input type="number" name="power_level" min="1" max="100" [(ngModel)]="powerLevel">
+<button>Calculate Powers</button>
+<img src="http://vignette3.wikia.nocookie.net/dragonball/images/7/77/SSJ_Goku_by_aznfanaticwarrior.png/revision/latest?cb=20120703070637">
+<table>
+	<tr>
+		<td>
+			<app-human [powerLevel]="powerLevel" [superlative]="superlativeMessage"></app-human>
+		</td>
+		<td>
+			<app-saiyan [powerLevel]="powerLevel" [superlative]="superlativeMessage"></app-saiyan>
+		</td>
+		<td>
+			<app-super-saiyan [powerLevel]="powerLevel" [superlative]="superlativeMessage"></app-super-saiyan>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<app-super-saiyan-two [powerLevel]="powerLevel" [superlative]="superlativeMessage"></app-super-saiyan-two>
+		</td>
+		<td>
+			<app-super-saiyan-three [powerLevel]="powerLevel" [superlative]="superlativeMessage"></app-super-saiyan-three>
+		</td>
+		<td>
+			<app-super-saiyan-four [powerLevel]="powerLevel" [superlative]="superlativeMessage"></app-super-saiyan-four>
+		</td>
+	</tr>
+</table>

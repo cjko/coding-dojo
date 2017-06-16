@@ -1,0 +1,24 @@
+* {
+	font-family: Arial;
+}
+
+.content {
+	border: 1px solid black;
+	padding: 20px;
+	width: 600px;
+}
+
+.submit-button {
+	width: 620px;
+	padding: 10px;
+	text-align: center
+}
+
+button {
+	width: 600px;
+	height: 50px;
+}
+
+.success {
+	color: green;
+}

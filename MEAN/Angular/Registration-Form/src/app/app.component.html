@@ -1,0 +1,199 @@
+<!--The whole content below can be removed with the new code.-->
+<div style="text-align:left;">
+	<h1>
+		Registration
+	</h1>
+	<div class="content">
+		<div class="success" *ngIf="submittedUser">
+			<p>
+				Thank you for registering with us {{submittedUser.first_name}}. We just sent you a confirmation email at <a href="{{user.email}}">{{submittedUser.email}}</a>, and we will send all mail to {{submittedUser.street_address}}<span *ngIf="submittedUser.unit"> {{submittedUser.unit}}</span>, {{submittedUser.city}}, {{submittedUser.state}}.
+			</p>
+			<p>Have a wonderful day!</p>
+		</div>
+		<div class="registration-form">
+			<h2>Account Information</h2>
+			<form #form="ngForm">
+				<table>
+					<tr>
+						<td style="text-align:right">*First Name:</td>
+						<td>
+							<input 
+								type="text" 
+								name="first_name" 
+								required 
+								minlength="2"
+								maxlength="24"
+								[(ngModel)]="user.first_name" 
+								#first_name="ngModel"
+							/>
+						</td>
+						<td *ngIf="first_name.errors && (first_name.touched || form.submitted)" style="color:red">
+							<span *ngIf="first_name.errors.required">First name is required.</span>
+							<span *ngIf="first_name.errors.minlength">First name must be at least 2 characters.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*Last Name:</td>
+						<td>
+							<input 
+								type="text" 
+								name="last_name" 
+								required 
+								minlength="2"
+								maxlength="24" 
+								[(ngModel)]="user.last_name" 
+								#last_name="ngModel"
+							/>
+						</td>
+						<td *ngIf="last_name.errors && (last_name.touched || form.submitted)" style="color:red">
+							<span *ngIf="last_name.errors.required">Last name is required.</span>
+							<span *ngIf="last_name.errors.minlength">Last name must be at least 2 characters.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*Email:</td>
+						<td>
+							<input 
+								type="text" 
+								name="email" 
+								required 
+								pattern='^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+								[(ngModel)]="user.email" 
+								#email="ngModel"
+							/>
+						</td>
+						<td *ngIf="email.errors && (email.touched || form.submitted)" style="color:red">
+							<span *ngIf="email.errors.required">Email is required.</span>
+							<span *ngIf="email.errors.pattern">Please enter a valid email.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*Password:</td>
+						<td>
+							<input 
+								type="password" 
+								name="password" 
+								required 
+								minlength="8" 
+								maxlength="16"
+								pattern='^(?=.*\d).{8,16}$'
+								[(ngModel)]="user.password" 
+								#password="ngModel"
+							/>
+						</td>
+						<td *ngIf="password.errors && (password.touched || form.submitted)" style="color:red">
+							<span *ngIf="password.errors.required">Password is required</span>
+							<span *ngIf="password.errors.pattern">Password must be between 8 and 16 digits long and include at least one numeric digit.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*Confirm Password:</td>
+						<td>
+							<input 
+								type="password" 
+								name="confirm_pw" 
+								[(ngModel)]="user.confirm_pw" 
+								#confirm_pw="ngModel"
+							/>
+						</td>
+						<td *ngIf="confirm_pw.value != password.value && (confirm_pw.touched || form.submitted)" style="color:red">
+							<span>Passwords do not match.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*Street Address:</td>
+						<td>
+							<input 
+								type="text" 
+								name="street_address" 
+								required 
+								pattern='^\d+\s[A-z]+\s[A-z]+'
+								[(ngModel)]="user.street_address" 
+								#street_address="ngModel"
+							/>
+						</td>
+						<td *ngIf="street_address.errors && (street_address.touched || form.submitted)" style="color:red">
+							<span *ngIf="street_address.errors.required">Street address is required.</span>
+							<span *ngIf="street_address.errors.pattern">Please enter a valid street address.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">Unit/Apt #:</td>
+						<td>
+							<input 
+								type="text" 
+								name="unit" 
+								[(ngModel)]="user.unit" 
+								#unit="ngModel"
+							/>
+						</td>
+						<td *ngIf="unit.errors" style="color:red">
+							<span *ngIf="unit.errors">{{ unit.errors | json }}</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*City</td>
+						<td>
+							<input 
+								type="text" 
+								name="city" 
+								required [(ngModel)]="user.city" 
+								pattern='^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$'
+								#city="ngModel"
+							/>
+						</td>
+						<td *ngIf="city.errors && (city.touched || form.submitted)" style="color:red">
+							<span *ngIf="city.errors.required">City is required.</span>
+							<span *ngIf="city.errors.pattern">Please enter a valid city name.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*State:</td>
+						<td>
+							<input 
+								type="text" 
+								name="state" 
+								required 
+								maxlength="2" 
+								pattern="^(?:(A[KLRZ]|C[AOT]|D[CE]|FL|GA|HI|I[ADLN]|K[SY]|LA|M[ADEINOST]|N[CDEHJMVY]|O[HKR]|P[AR]|RI|S[CD]|T[NX]|UT|V[AIT]|W[AIVY]))$" 
+								[(ngModel)]="user.state" 
+								#state="ngModel"
+							/>
+						</td>
+						<td *ngIf="state.errors && (state.touched || form.submitted)" style="color:red">
+							<span *ngIf="state.errors.required">State is required.</span>
+							<span *ngIf="state.errors.pattern">Please enter a valid state abbreviation.</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right">*I'm feeling lucky:</td>
+						<td>
+							<input 
+								type="radio" 
+								name="feeling_lucky" 
+								value=true
+								required
+								[(ngModel)]="user.feeling_lucky"
+								#feeling_lucky = 'ngModel'
+							/>Yes 
+							<input 
+								type="radio" 
+								name="feeling_lucky" 
+								value=false
+								[(ngModel)]="user.feeling_lucky"
+								#feeling_lucky = 'ngModel'
+							/>No
+						</td>
+						<td *ngIf="feeling_lucky.errors && (feeling_lucky.touched || form.submitted)" style="color:red;">
+							<span *ngIf="feeling_lucky.errors.required">How you are feeling is required.</span>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	<div class="submit-button">
+		<button (click)="submit(form)" [disabled]="!form.form.valid || password.value !== confirm_pw.value">Register</button>
+	</div>
+</div>
+
