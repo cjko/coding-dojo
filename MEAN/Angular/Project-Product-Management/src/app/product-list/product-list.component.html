@@ -1,0 +1,9 @@
+<h1>Products List</h1>
+<p>{{products | json}}</p>
+<div class="product" *ngFor="let product of products, let i = index">
+	<img *ngIf="product.imgurl" [src]="product.imgurl">
+	<p>{{ product.title }}</p>
+	<p>${{ product.price }}</p>
+	<p><button class="btn btn-primary" type="button" [routerLink]="['/products','edit',i]">EDIT</button></p>
+	<p><button class="btn btn-danger" type="button" (click)="deleteProduct(i)">Delete</button></p>
+</div>

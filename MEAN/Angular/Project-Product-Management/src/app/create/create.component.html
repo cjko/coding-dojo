@@ -1,0 +1,29 @@
+<h1>Create a New Product</h1>
+
+<form name="createForm" #createForm="ngForm">
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="text" required minlength="4" class="form-control" name="title" [(ngModel)]="newProduct.title" #title="ngModel">
+		<div *ngIf="title.errors && (title.touched || createForm.submitted)" class="red">
+			<p *ngIf="title.errors.required">Title is required.</p>
+			<p *ngIf="title.errors.minlength">Title must be at least 4 characters.</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="price">Price</label>
+		<input type="text" name="price" class="form-control" required [(ngModel)]="newProduct.price" #price="ngModel">
+		<div *ngIf="price.errors && (price.touched || createForm.submitted)" class="red">
+			<p *ngIf="price.errors.required">Price is required.</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="imgurl">Image Url</label>
+		<input type="text" name="imgurl" class="form-control" [(ngModel)]="newProduct.imgurl" #imgurl="ngModel">
+	</div>
+<!-- 	<button class="btn btn-danger" type="submit">DELETE</button>
+	<button class="btn btn-primary" type="submit" [disabled]="!editForm.valid">UPDATE</button> -->
+	<button class="btn btn-success" type="button" (click)="createProduct(createForm)" [disabled]="!createForm.valid">CREATE</button>
+</form>
+
+<!-- {{ newProduct | json }}
+{{ products | json }} -->
