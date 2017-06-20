@@ -1,0 +1,16 @@
+<form name="addForm" #addForm="ngForm">
+	<div class="form-group">
+		<label for="note">Note:</label>
+
+		<input type="text" class="form-control" required minlength="4" name="note" [(ngModel)]="noteObj.content" #note="ngModel" />
+
+		<div *ngIf="note.errors && (note.touched || addForm.submitted)" style="color: red;">
+			<p *ngIf="note.errors.required">Note is required.</p>
+			<p *ngIf="note.errors.minlength">Note must be at least 4 characters.</p>
+		</div>
+		
+	</div>
+	<button type="button" class="btn btn-success" [disabled]="!addForm.valid" (click)="addNote(addForm)">Add Note</button>
+</form>
+
+<p>{{ noteObj | json}}</p>

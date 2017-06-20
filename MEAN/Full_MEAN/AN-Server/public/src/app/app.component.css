@@ -1,0 +1,15 @@
+.wrapper {
+	width: 800px;
+}
+
+.add-note {
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+}
+
+.note-list {
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+}

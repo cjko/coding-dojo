@@ -1,0 +1,4 @@
+<div class="note" *ngFor="let note of notes">
+	<p>{{ note.content }}</p>
+	<p>{{ note.date | date: 'medium' }}</p>
+</div>
