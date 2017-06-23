@@ -1,0 +1,11 @@
+.userPost {
+	border: 2px solid black;
+	margin: 10px 0;
+	padding: 10px;
+}
+
+.add-comment {
+	border: 1px solid black;
+	padding: 10px;
+	margin: 10px;
+}

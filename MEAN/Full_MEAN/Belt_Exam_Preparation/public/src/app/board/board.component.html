@@ -1,0 +1,18 @@
+<table>
+	<thead>
+		<th>Category</th>
+		<th>Topic</th>
+		<th>User Name</th>
+		<th>Posts</th>
+	</thead>
+	<tbody>
+		<tr *ngFor="let topic of topics">
+			<td>{{ topic.category }}</td>
+			<td><a [routerLink]="['/topic',topic._id]">{{ topic.title }}</a></td>
+			<td><a [routerLink]="['/user',topic.creator._id]">{{ topic.creator.name }}</a></td>
+			<td>{{ topic.posts.length }}</td>
+		</tr>
+	</tbody>
+</table>
+
+<app-add-topic (addTopicEmitter)="getTopics()"></app-add-topic>

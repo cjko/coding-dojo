@@ -1,0 +1,14 @@
+<div class="userPost">
+	<p><a [routerLink]="['/user',post.creator._id]">{{ post.creator.name }}</a>: {{ post.content }}</p>
+	<p>{{ post.createdAt | date: 'medium' }}
+<!-- 	<p>upvote {{post.upvotes }}</p>
+	<p>downvote {{post.downvotes}} </p>
+ -->
+ 	<ul>
+ 		<li *ngFor="let comment of comments"><app-comment [comment]="comment"></app-comment></li>
+ 	</ul>
+
+	<div class="add-comment">
+		<app-add-comment (addCommentEmitter)="emitAddComment()" [post]="post"></app-add-comment>
+	</div>
+</div>

@@ -1,0 +1,7 @@
+<div class="wrapper">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <h1>Welcome, {{username}}!</h1>
+    <a [routerLink]="['/dashboard']">dashboard</a> | <a (click)="logout()">logout</a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

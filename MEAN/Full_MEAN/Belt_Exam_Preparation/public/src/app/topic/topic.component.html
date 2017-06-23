@@ -1,0 +1,12 @@
+<div class="topic">
+	<h4><a [routerLink]="['/user',topic.creator._id]">{{ topic.creator.name }}</a> posted a topic:</h4>
+	<h4><em>{{ topic.title }}</em></h4>
+	<p>Description: {{ topic.description }}</p>
+</div>
+
+<div class="add-post">
+	<app-add-post (postPostEmitter)="getTopic()"></app-add-post>
+</div>
+
+<app-post *ngFor="let post of posts" [post]="post" [comments]="post.comments" (addCommentEmitter)="getTopic()"></app-post>
+

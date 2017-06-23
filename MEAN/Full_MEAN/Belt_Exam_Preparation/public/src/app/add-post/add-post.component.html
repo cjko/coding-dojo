@@ -1,0 +1,10 @@
+<form name="postForm" #postForm="ngForm">
+	<div class="form-group">
+		<label for="content"><h3>Post your answer here...</h3></label>
+		<input type="textarea" class="form-control" required name="content" [(ngModel)]="newPost.content" #content="ngModel">
+	</div>
+	<button type="button" class="btn btn-primary" (click)="postPost(postForm)">Post</button>
+</form>
+
+{{ newPost | json }}
+

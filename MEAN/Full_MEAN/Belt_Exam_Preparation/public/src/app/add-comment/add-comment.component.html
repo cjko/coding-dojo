@@ -1,0 +1,5 @@
+<form name="commentForm" #commentForm="ngForm">
+	<input type="textarea" required class="form-control" name="content" [(ngModel)]="comment.content" #content="ngModel">
+	<button type="button" class="btn btn-secondary btn-sm" (click)="postComment(commentForm)">Add Comment</button>
+</form>
+{{ comment | json }}

@@ -1,0 +1,33 @@
+<h4>Add a New Topic</h4>
+<form class="well" name="addTopicForm" #addTopicForm="ngForm">
+	<div class="form-group">
+		<label for="title">Topic:</label>
+		<input type="text" required class="form-control" name="title" [(ngModel)]="topic.title" #title="ngModel">
+		<div *ngIf="title.errors && (title.touched || addTopicForm.submitted)">
+			<p class="red" *ngIf="title.errors.required">Topic name is required.</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="description">Description:</label>
+		<input type="textarea" required class="form-control" name="description" [(ngModel)]="topic.description" #description="ngModel">
+		<div *ngIf="description.errors && (description.touched || addTopicForm.submitted)">
+			<p class="red" *ngIf="description.errors.required">Description is required.</p>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="category">Category:</label>
+		<select name="category" [(ngModel)]="topic.category" #category="ngModel" required>
+			<option >HTML</option>
+			<option >MySQL</option>
+			<option >UX</option>
+			<option >Web Development</option>
+		</select>
+		<div *ngIf="category.errors && (category.touched || addTopicForm.submitted)">
+			<p class="red" *ngIf="category.errors.required">Category is required.</p>
+		</div>
+	</div>
+	<input type="hidden" name="creator" value="Joe">
+	<button type="button" class="btn btn-primary" [disabled]="!addTopicForm.valid" (click)="postTopic(addTopicForm)">Submit</button>
+</form>
+
+{{ topic | json }}
